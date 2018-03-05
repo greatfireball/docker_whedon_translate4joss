@@ -7,4 +7,4 @@ WORKDIR /data
 
 ENTRYPOINT pandoc -o paper.pdf -V geometry:margin=1in --filter pandoc-citeproc paper.md --template /tmp/whedon/resources/latex.template --variable formatted_doi=pending -V joss_logo_path=/tmp/whedon/resources/joss-logo.png --pdf-engine=xelatex
 
-CMD -variable repository=https://link-to-repo --variable archive_doi=https://archive-doi
+CMD --variable=repository:https://link-to-repo --variable=archive_doi:https://archive-doi
