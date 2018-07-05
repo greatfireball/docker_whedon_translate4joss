@@ -1,6 +1,12 @@
 ARG osversion=xenial
 FROM ubuntu:${osversion}
 
+ARG VERSION=master
+ARG VCS_REF
+ARG BUILD_DATE
+
+RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
+
 ENV WHEDON_DIR=/opt/whedon
 
 RUN apt update && \
