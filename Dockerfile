@@ -7,6 +7,13 @@ ARG BUILD_DATE
 
 RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
 
+LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
+      description="Dockerfile providing the whedon installation for a preview of joss submissions" \
+      version=${VERSION} \
+      org.label-schema.vcs-ref=${VCS_REF} \
+      org.label-schema.build-date=${BUILD_DATE} \
+      org.label-schema.vcs-url="https://github.com/greatfireball/docker_whedon_translate4joss.git"
+
 ENV WHEDON_DIR=/opt/whedon
 
 RUN apt update && \
